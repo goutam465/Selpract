@@ -30,4 +30,5 @@ public class githubtest {
         driver.findElement(By.xpath("//a[.='Starred']")).click();
 
     }
+
 }
