@@ -13,6 +13,8 @@ public class Dropdown {
 
         WebDriver driver = new FirefoxDriver();
 
+        driver.manage().window().maximize();
+
         driver.get("http://www.seleniumeasy.com/test/basic-select-dropdown-demo.html");
 
         WebElement lb = driver.findElement(By.xpath("//select[@id='select-demo']"));
@@ -22,6 +24,27 @@ public class Dropdown {
         select.selectByValue("Sunday");
 
         Thread.sleep(2000);
+
+        select.selectByIndex(2);
+
+        Thread.sleep(2000);
+
+        select.selectByVisibleText("Friday");
+
+
+        WebElement mlb = driver.findElement(By.id("multi-select"));
+
+        Select select1 = new Select(mlb);
+
+        select1.selectByVisibleText("California");
+
+        Thread.sleep(2000);
+
+        select1.selectByIndex(5);
+
+        Thread.sleep(2000);
+
+        select1.selectByValue("Washington");
 
 
     }
